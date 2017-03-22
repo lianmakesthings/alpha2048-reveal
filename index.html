@@ -26,158 +26,343 @@
 <body>
 <div class="reveal">
     <div class="slides">
-        <section><h1>Alpha2048 </h1><h4>Reinforcement learning in the browser</h4></section>
+        <section>
+            <h1>Alpha2048 </h1><h3>Reinforcement learning in the browser</h3>
+            <aside class="notes">
+                I'm deeply humbled and somewhat intimidated by being here amidst all you machine learning experts.
+                I am, by which I mean I work as a software developer.
+                Machine Learning is somewhat of a hobby and this is the story of how I tried to build an intelligent
+                system,
+                which could learn a game the old trial and error way.
+                When I researched different learning algorithms, sometimes I wasn't 100% clear on the theory or math
+                behind it.
+                So if I say something you object to, please let me now.
+            </aside>
+        </section>
         <section>
             <h1>Lian Li</h1>
             <section data-transition="slide-out">
-                <img data-src="assets/JS_341_sm.png" height="400">
+                <img data-src="assets/JS_341_sm.png" height="400" style="margin-top: 100px">
             </section>
             <section data-transition="slide-in slide-out">
-                <div>
+                <h2>
                     <a href="https://twitter.com/Chimney42">
                         <i class="fa fa-twitter"></i><span style="margin-left: 10px">@Chimney42</span>
                     </a>
-                </div>
-                <div>
+                </h2>
+                <h2>
                     <a href="https://github.com/Chimney42">
                         <i class="fa fa-github"></i><span style="margin-left: 10px">Chimney42</span>
                     </a>
-                </div>
+                </h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h2>Software Developer @ Datenfreunde</h2>
             </section>
             <section data-transition="slide-in">
-                <aside class="notes">
-                    I'm did not study AI or Computer Science, what I'm telling you is what I interpreted from the
-                    research I've done
-                    If I present a fact you object to, feel free to speak up.
-                </aside>
-                <p>Software Developer @ Datenfreunde</p>
-                <p>Machine Learning enthusiast</p>
+                <h2>Machine Learning enthusiast</h2>
             </section>
         </section>
         <section>
-            <section>
-                <h1>Threes</h1>
+            <h1>The game</h1>
+            <section data-transition="slide-out" style="margin-top: 50px">
                 <img data-src="assets/Threes_video_game_trailer.gif">
             </section>
-            <section>
-                <h1>Clones</h1>
+            <section data-transition="slide-in slide-out" style="margin-top: 50px">
                 <img data-src="assets/2048-clones.png" height="400">
             </section>
-            <section>
-                <h1>Weird clones</h1>
+            <section data-transition="slide-in slide-out" style="margin-top: 50px">
                 <img data-src="assets/DOGE-2048.png" height="400">
             </section>
-            <section>
-                <h1>2048</h1>
+            <section data-transition="slide-in" style="margin-top: 75px">
                 <img data-src="https://upload.wikimedia.org/wikipedia/commons/2/28/2048_finished_game.png"
-                     height="400">
+                     height="500">
             </section>
         </section>
         <section>
             <h1>Rules</h1>
-            <ul>
-                <li class="fragment">$ 4 \times 4 $ grid</li>
-                <li class="fragment">each turn take action $\alpha$; $\alpha \in \big\{ 0, 1, 2, 3 \big\} $</li>
-                <li class="fragment">merge two tiles with same value $v \rightarrow$ one tile with the value $2v$</li>
-                <li class="fragment"><i class="fa fa-times"></i>: no more moves are possible</li>
-                <li class="fragment"><i class="fa fa-check"></i>: one tile with 2048 present</li>
-                <li class="fragment"><i class="fa fa-trophy"></i>: tiles with value $v$ are merged $ \rightarrow 2v$ is added to score</li>
-            </ul>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <h2> 4 x 4 - grid</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <div>
+                    <h2>each turn take action $\alpha$; $\alpha \in \big\{ 0, 1, 2, 3 \big\} $</h2>
+                </div>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <div>
+                    <h2>merge two tiles with value $v \rightarrow$ one tile with value $2v$</h2>
+                </div>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h2><i class="fa fa-times"></i> no more moves are possible</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h2><i class="fa fa-check"></i> one tile with 2048 present</h2>
+            </section>
+            <section data-transition="slide-in">
+                <h2><i class="fa fa-trophy"></i> tiles with value $v$ are merged $ \rightarrow 2v$ is added to score
+                </h2>
+            </section>
         </section>
         <section>
             <h1>Alpha2048</h1>
-            <p class="fragment">JavaScript</p>
-            <p class="fragment">Supervised Learning</p>
-            <p class="fragment">Tile rating = $\sum values \over count$</p>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <aside class="notes">
+                    It just runs, in the browser or with node
+                </aside>
+                <h2>JavaScript</h2>
+            </section>
+            <section data-transition="slide-in">
+                <aside class="notes">
+                    cause we know what's good and what's bad
+                </aside>
+                <h2>Supervised Learning</h2>
+            </section>
         </section>
         <section>
-            <section>
-                <h1><a href="https://github.com/cazala/synaptic">synaptic</a></h1>
-                <p class="fragment">neural network library for javascript</p>
-                <p class="fragment">classification</p>
-                <p class="fragment"><a href="https://github.com/Chimney42/positronic-brain">prior experience</a></p>
+            <h1><a href="https://github.com/cazala/synaptic">synaptic</a></h1>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <h2>neural network library for javascript</h2>
             </section>
-            <section>
-                <h1>First iteration</h1>
-                <p class="fragment">Goal: gather data</p>
-                <ol>
-                    <li class="fragment">simulate each of the possible directions from current boardstate</li>
-                    <li class="fragment">evaluate whether boardstate rating increases</li>
-                    <li class="fragment">make random move</li>
-                </ol>
-
-                <pre class="fragment" ><code class="javascript" data-trim>
+            <section data-transition="slide-in slide-out">
+                <h2>classification</h2>
+            </section>
+            <section data-transition="slide-in">
+                <h2><a href="https://github.com/Chimney42/positronic-brain">prior experience</a></h2>
+            </section>
+        </section>
+        <section>
+            <h1>First iteration</h1>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <h2>Goal: gather data</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h2>simulate all actions</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h2>does score increase?</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h2>random move</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                    <pre><code class="javascript" data-trim>
                     {
                         boardstate : [0, 2, 0, ..., 8],
                         actions : [0, 1, 0, 1]
                     }
-                </code></pre>
+                    </code></pre>
             </section>
-            <section>
-                <h1>Second iteration</h1>
-                <p class="fragment">Goal: compare trained network</p>
-                <ol>
-                    <li class="fragment">train neural network to predict probability of increased rating</li>
-                    <li class="fragment">make move with highest probability</li>
-                </ol>
+
+        </section>
+        <section>
+            <h1>Second iteration</h1>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <h2>Goal: compare trained network</h2>
             </section>
-            <section>
-                <h1>Comparison</h1>
-                <table>
-                    <tr>
-                        <th></th>
-                        <th>Random</th>
-                        <th>Trained</th>
-                    </tr>
-                    <tr>
-                        <td>Highest rating</td>
-                        <td>55.25</td>
-                        <td>51.8</td>
-                    </tr>
-                    <tr>
-                        <td>Highest tile value</td>
-                        <td>256</td>
-                        <td>256</td>
-                    </tr>
-                    <tr>
-                        <td>Most moves per game</td>
-                        <td>324</td>
-                        <td>295</td>
-                    </tr>
-                </table>
+            <section data-transition="slide-in slide-out">
+                <h2>train neural network</h2>
             </section>
-            <section>
-                <h1>Conclusion</h1>
-                <p class="fragment">Did not work great</p>
-                <p class="fragment">only next move</p>
-                <p class="fragment">needed more farsightedness</p>
+            <section data-transition="slide-in slide-out">
+                <h2>predict score increase</h2>
+            </section>
+            <section data-transition="slide-in">
+                <h2>move where probability highest</h2>
             </section>
         </section>
         <section>
-            <section>
-                <h1>Temporal Difference Learning</h1>
-                <p class="fragment">successive states which correlate</p>
-                <p class="fragment">reinforcement learning</p>
+            <h1>Conclusion</h1>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <h2>Did not work great</h2>
             </section>
-            <section>
-                <h1><a href="http://cs.stanford.edu/people/karpathy/reinforcejs/">REINFORCEjs</a></h1>
-                <p class="fragment">Model-free (kinda)</p>
-                <p class="fragment">reward / reinforcement value</p>
-                <pre class="fragment"><code class="javascript" data-trim>
+            <section data-transition="slide-in slide-out">
+                <h2>focus only on next state</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h2>needs more foresight</h2>
+            </section>
+        </section>
+        <section>
+            <h1>Reinforcement <div style="font-size: 20%">Learning</div></h1>
+            <aside class="notes">
+                Reinforcement learning deals with the problem of mapping states of a system to actions that will
+                maximize a numerical reward for the agent. Every action effects the future rewards an agent can
+                achieve, rendering reinforcement learning such a complex problem.
+            </aside>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in">
+                <aside class="notes">
+                    extension of markov chain. If any state only allowed one action and all rewards are the same, mdp would reduce to mc
+                </aside>
+                <h2>markov decision process</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h2>delayed reward</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <aside class="notes">
+                    Exploration, cause we need lots of data
+                    Exploitation because we want to make the moves that give us the highest reward
+                </aside>
+                <h2>exploration vs exploitation</h2>
+            </section>
+        </section>
+        <section>
+            <h1>Temporal Difference<div style="font-size: 20%">Learning</div></h1>
+            <aside class="notes">
+                starting from the last state (the one where we get a reward) TD method is used to figure out how former sates and actions influence the last state
+            </aside>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <aside class="notes">
+                    Dynamic Programming breaks down a problem into subproblems
+                </aside>
+                <h2>dynamic programming</h2>
+            </section>
+            <section data-transition="slide-in">
+                <aside class="notes">
+                    needs no model of the environment, approximate future rewards by checking memory (update after final state
+                    reached)
+                </aside>
+                <h2>monte carlo methods</h2>
+            </section>
+        </section>
+        <section>
+            <h1><a href="http://cs.stanford.edu/people/karpathy/reinforcejs/">REINFORCEjs</a></h1>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in">
+                <pre><code class="javascript" data-trim>
                     const state = [0, 2, 2, ..., 0];
                     const action = agent.act(state);
                     const reward = calculateReward();
                     agent.learn(reward);
                 </code></pre>
             </section>
+            <section data-transition="slide-in slide-out">
+                <h2>Reward?</h2>
+            </section>
         </section>
         <section>
+            <h1>First iteration</h1>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <h2>Reward = Score</h2>
+            </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <iframe data-src="http://localhost:3000/dashboard-solo/db/score-game-end?from=1489887321882&to=1489923614093&panelId=1"
+                        width="1200" height="500"></iframe>
+            </section>
+            <section>
+                <h2>find other reinforcement value</h2>
+            </section>
+        </section>
+        <section>
+            <h1>Second iteration</h1>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <h2>$ tileRating = \frac{\sum tileValues}{tileCount}$</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <div style="margin-top: 125px">
+                    <div style="float: left;  margin-top: 100px">
+                        <img src="assets/before.png" height="200">
+                        <p style="font-size: 60%; margin-top: -20px">Score: 0 | Rating: 2.5</p>
+                    </div>
+                    <div style="float: left; margin-left: 100px">
+                        <div style="margin-left: 25px">
+                            <div class="fragment" style="float: left; margin-top: 75px; font-size: 150%">
+                                Left <i class="fa fa-long-arrow-right"></i>
+                            </div>
+                            <div style="float: left; margin-left: 100px">
+                                <img class="fragment" src="assets/after-Merge.png" height="200">
+                                <p class="fragment" style="font-size: 60%; margin-top: -20px">Score: 4 | Rating: 3.5</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="fragment" style="float: left; margin-top: 75px; font-size: 150%">
+                                Down <i class="fa fa-long-arrow-right"></i>
+                            </div>
+                            <div style="float: left; margin-left: 75px">
+                                <img class="fragment" src="assets/after-noMerge.png" height="200">
+                                <p class="fragment" style="font-size: 60%; margin-top: -20px">Score: 0 | Rating: 2.8</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h4>$ reward = (\frac{score}{averageScore}) \times (\frac{rating}{averageRating})$</h4>
+            </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <iframe data-src="http://localhost:3000/dashboard-solo/db/rating-score-game-end?panelId=2&from=1490043996929&to=1490081616986"
+                        width="1200" height="500"></iframe>
+            </section>
+        </section>
+        <section>
+            <h1>Third iteration</h1>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <h2>decay $\epsilon$ over time</h2>
+                <h4>(exploration)</h4>
+            </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <iframe data-src="http://localhost:3000/dashboard-solo/db/decay-epsilon-score-rating?from=1490135381170&to=1490169406419&panelId=2"
+                    width="1200" height="500"></iframe>
+            </section>
+        </section>
+        <section>
+            <h1>Next</h1>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <h2>meta parameters</h2>
+            </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 50px">
+                <aside class="notes">
+                    Gamma 0 = maximally greedy, noplan ahead
+                    epsilon 0 = low/no exploration
+                </aside>
+                <pre><code class="javascript" data-trim>
+                    const spec = {
+                        update: 'qlearn', // qlearn | sarsa
+                        gamma: 0.5, // discount factor
+                        epsilon: 0.2, // epsilon-greedy policy
+                        alpha: 0.02, // value function learning rte
+                        experience_add_every: 5, // number of time steps before we add another experience to replay memory
+                        experience_size: 100000, // size of experience replay memory
+                        learning_steps_per_iteration: 100,
+                        tderror_clamp : 1.0; // for robustness
+                        num_hidden_units: 256 // number of neurons in hidden layer
+                    };
+                </code></pre>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h2>python</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                <h2>Convolutional network</h2>
+            </section>
+        </section>
+        <section>
+            <h2>Links</h2>
             <p><a href="https://github.com/gabrielecirulli/2048">Open Source 2048</a></p>
-            <p>
-                <a href="https://docs.google.com/presentation/d/1I9RS3SMdMp8Uk9C6eyS6jK_w_34BKCrvkN-kWau1MU4/edit#slide=id.g12f609b381_0_0">Deep
-                    Reinforcement Learning 2048 with Python</a></p>
-            <p><a href="https://github.com/shalinguyen/socialicious">Icons by socialicious</a></p>
+            <p><a href="https://docs.google.com/presentation/d/1I9RS3SMdMp8Uk9C6eyS6jK_w_34BKCrvkN-kWau1MU4/edit#slide=id.g12f609b381_0_0">
+                    Deep Reinforcement Learning 2048 with Python
+            </a></p>
+            <p><a href="http://www.ias.informatik.tu-darmstadt.de/uploads/Teaching/AutonomousLearningSystems/Kunz_ALS_2013.pdf">
+                    An Introduction to Temporal Difference Learning
+            </a></p>
+            <p><a href="http://fontawesome.io/">Icons by fontawesome</a></p>
             <p><a href="https://github.com/hakimel/reveal.js">Presentation with reveal.js</a></p>
+        </section>
+        <section>
+            <h1>Live demo</h1>
         </section>
     </div>
 </div>
@@ -200,7 +385,7 @@
                 hljs.initHighlightingOnLoad();
             }
             },
-            { src: 'plugin/math/math.js', async: true }
+            {src: 'plugin/math/math.js', async: true}
         ]
     });
 </script>
