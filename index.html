@@ -89,21 +89,23 @@
                     <h2>each turn take action $\alpha$; $\alpha \in \big\{ 0, 1, 2, 3 \big\} $</h2>
             </section>
             <section data-transition="slide-in slide-out">
-                    <h2>after move, new tile added to empty space </h2>
+                <h2>merge two tiles with value $v \rightarrow$ one tile with value $2v$</h2>
+            </section>
+            <section data-transition="slide-in slide-out">
+                    <h2>after action, new tile added to empty space </h2>
                 <h4>(90% $v=2$, 10% $v=4$)</h4>
             </section>
             <section data-transition="slide-in slide-out">
-                    <h2>merge two tiles with value $v \rightarrow$ one tile with value $2v$</h2>
+                <h2><i class="fa fa-times"></i></h2>
+                <h2 class="fragment">no more moves are possible</h2>
             </section>
             <section data-transition="slide-in slide-out">
-                <h2><i class="fa fa-times"></i> no more moves are possible</h2>
-            </section>
-            <section data-transition="slide-in slide-out">
-                <h2><i class="fa fa-check"></i> one tile with 2048 present</h2>
+                <h2><i class="fa fa-check"></i></h2>
+                <h2 class="fragment">one tile with 2048 present</h2>
             </section>
             <section data-transition="slide-in">
-                <h2><i class="fa fa-trophy"></i> tiles with value $v$ are merged $ \rightarrow 2v$ is added to score
-                </h2>
+                <h2><i class="fa fa-trophy"></i> </h2>
+                <h2 class="fragment">tiles with value $v$ are merged $ \rightarrow 2v$ is added to score</h2>
             </section>
         </section>
         <section>
@@ -136,11 +138,8 @@
             </section>
         </section>
         <section>
-            <h1>First iteration</h1>
+            <h1>Gather data</h1>
             <section data-transition="slide-out"></section>
-            <section data-transition="slide-in slide-out">
-                <h2>Goal: gather data</h2>
-            </section>
             <section data-transition="slide-in slide-out">
                 <h2>simulate all actions</h2>
             </section>
@@ -158,14 +157,10 @@
                     }
                     </code></pre>
             </section>
-
         </section>
         <section>
-            <h1>Second iteration</h1>
+            <h1>Trained network</h1>
             <section data-transition="slide-out"></section>
-            <section data-transition="slide-in slide-out">
-                <h2>Goal: compare trained network</h2>
-            </section>
             <section data-transition="slide-in slide-out">
                 <h2>train neural network</h2>
             </section>
@@ -191,23 +186,23 @@
         </section>
         <section>
             <h1>Reinforcement <div style="font-size: 20%">Learning</div></h1>
-            <aside class="notes">
-                Reinforcement learning deals with the problem of mapping states of a system to actions that will
-                maximize a numerical reward for the agent. Every action effects the future rewards an agent can
-                achieve, rendering reinforcement learning such a complex problem.
-            </aside>
             <section data-transition="slide-out"></section>
-            <section data-transition="slide-in">
+            <section data-transition="slide-in slide-out" style="margin-top: 100px">
                 <aside class="notes">
-                    extension of markov chain. If any state only allowed one action and all rewards are the same, mdp would reduce to mc
-                    chain is set from the beginning, not dependent on decision making
+                    Reinforcement learning deals with the problem of mapping states of a system to actions that will
+                    maximize a numerical reward for the agent. Every action effects the future rewards an agent can
+                    achieve, rendering reinforcement learning such a complex problem.
                 </aside>
-                <h2>markov decision process</h2>
+                <div>$s = [0, 2, 4, 0, 2, 0, 0, 0]$</div>
+                <h4 class="fragment" style="margin-top: 30px">map</h4>
+                <div class="fragment">$\alpha \in \big\{ 0, 1, 2, 3 \big\} $</div>
+                <h4 class="fragment" style="margin-top: 30px">get</h4>
+                <div class="fragment">$reward$</div>
             </section>
             <section data-transition="slide-in slide-out">
                 <h2>delayed reward</h2>
             </section>
-            <section data-transition="slide-in slide-out">
+            <section data-transition="slide-in">
                 <aside class="notes">
                     Exploration, cause we need lots of data
                     Exploitation because we want to make the moves that give us the highest reward
@@ -223,16 +218,16 @@
             <section data-transition="slide-out"></section>
             <section data-transition="slide-in slide-out">
                 <aside class="notes">
-                    Dynamic Programming breaks down a problem into subproblems
+                    Breaking big problems into subproblems
                 </aside>
-                <h2>dynamic programming</h2>
+                <h2>Dynamic programming</h2>
             </section>
             <section data-transition="slide-in">
                 <aside class="notes">
-                    needs no model of the environment, approximate future rewards by checking memory (update after final state
+                    approximate future rewards by checking memory (update after final state
                     reached)
                 </aside>
-                <h2>monte carlo methods</h2>
+                <h2>Monte Carlo methods</h2>
             </section>
         </section>
         <section>
@@ -247,7 +242,7 @@
                 </code></pre>
             </section>
             <section data-transition="slide-in slide-out">
-                <h2>Reward?</h2>
+                <h2>$reward = Q(s, \alpha)$</h2>
             </section>
         </section>
         <section>
@@ -260,54 +255,9 @@
                 <iframe data-src="http://localhost:3000/dashboard-solo/db/score-game-end?from=1489887321882&to=1489923614093&panelId=1"
                         width="1200" height="500"></iframe>
             </section>
-            <section>
-                <h2>find other reinforcement value</h2>
-            </section>
         </section>
         <section>
             <h1>Second iteration</h1>
-            <section data-transition="slide-out"></section>
-            <section data-transition="slide-in slide-out">
-                <h2>$ tileRating = \frac{\sum tileValues}{tileCount}$</h2>
-            </section>
-            <section data-transition="slide-in slide-out">
-                <div style="margin-top: 125px">
-                    <div style="float: left;  margin-top: 100px">
-                        <img src="assets/before.png" height="200">
-                        <p style="font-size: 60%; margin-top: -20px">Score: 0 | Rating: 2.5</p>
-                    </div>
-                    <div style="float: left; margin-left: 100px">
-                        <div style="margin-left: 25px">
-                            <div class="fragment" style="float: left; margin-top: 75px; font-size: 150%">
-                                Left <i class="fa fa-long-arrow-right"></i>
-                            </div>
-                            <div style="float: left; margin-left: 100px">
-                                <img class="fragment" src="assets/after-Merge.png" height="200">
-                                <p class="fragment" style="font-size: 60%; margin-top: -20px">Score: 4 | Rating: 3.5</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="fragment" style="float: left; margin-top: 75px; font-size: 150%">
-                                Down <i class="fa fa-long-arrow-right"></i>
-                            </div>
-                            <div style="float: left; margin-left: 75px">
-                                <img class="fragment" src="assets/after-noMerge.png" height="200">
-                                <p class="fragment" style="font-size: 60%; margin-top: -20px">Score: 0 | Rating: 2.8</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section data-transition="slide-in slide-out">
-                <h4>$ reward = (\frac{score}{averageScore}) \times (\frac{rating}{averageRating})$</h4>
-            </section>
-            <section data-transition="slide-in slide-out" style="margin-top: 75px">
-                <iframe data-src="http://localhost:3000/dashboard-solo/db/rating-score-game-end?panelId=2&from=1490043996929&to=1490081616986"
-                        width="1200" height="500"></iframe>
-            </section>
-        </section>
-        <section>
-            <h1>Third iteration</h1>
             <section data-transition="slide-out"></section>
             <section data-transition="slide-in slide-out">
                 <h2>decay $\epsilon$ over time</h2>
@@ -316,6 +266,17 @@
             <section data-transition="slide-in slide-out" style="margin-top: 75px">
                 <iframe data-src="http://localhost:3000/dashboard-solo/db/decay-epsilon-score-rating?from=1490135381170&to=1490169406419&panelId=2"
                     width="1200" height="500"></iframe>
+            </section>
+        </section>
+        <section>
+            <h1>Third iteration</h1>
+            <section data-transition="slide-out"></section>
+            <section data-transition="slide-in slide-out">
+                <h2>add hidden layer</h2>
+            </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <iframe data-src="http://localhost:3000/dashboard-solo/db/two-layers-rating-score-normalized?from=1493026758609&to=1493060856532&panelId=2"
+                        width="1200" height="500"></iframe>
             </section>
         </section>
         <section>
@@ -342,43 +303,16 @@
             <section data-transition="slide-in slide-out">
                 <h2>flat input</h2>
             </section>
-            <section data-transition="slide-in slide-out">
-                <h2>one hidden layer</h2>
-            </section>
         </section>
         <section>
-            <h1>Next</h1>
-            <section data-transition="slide-out"></section>
-            <section data-transition="slide-in slide-out">
-                <h2>meta parameters</h2>
+            <h1>Live Demo</h1>
+        </section>
+        <section>
+            <section>
+                <img src="assets/random.gif">
             </section>
-            <section data-transition="slide-in slide-out" style="margin-top: 50px">
-                <aside class="notes">
-                    Gamma 0 = maximally greedy, noplan ahead
-                    epsilon 0 = low/no exploration
-                </aside>
-                <pre><code class="javascript" data-trim>
-                    const spec = {
-                        update: 'qlearn', // qlearn | sarsa
-                        gamma: 0.5, // discount factor
-                        epsilon: 0.2, // epsilon-greedy policy
-                        alpha: 0.02, // value function learning rte
-                        experience_add_every: 5, // number of time steps before we add another experience to replay memory
-                        experience_size: 100000, // size of experience replay memory
-                        learning_steps_per_iteration: 100,
-                        tderror_clamp : 1.0; // for robustness
-                        num_hidden_units: 256 // number of neurons in hidden layer
-                    };
-                </code></pre>
-            </section>
-            <section data-transition="slide-in slide-out">
-                <h2>python</h2>
-            </section>
-            <section data-transition="slide-in slide-out">
-                <aside class="notes">
-                    With a convolutional network, I'd be able to adress the flat input problem
-                </aside>
-                <h2>Convolutional network</h2>
+            <section>
+                <img src="assets/trained.gif">
             </section>
         </section>
         <section>
@@ -392,9 +326,6 @@
             </a></p>
             <p><a href="http://fontawesome.io/">Icons by fontawesome</a></p>
             <p><a href="https://github.com/hakimel/reveal.js">Presentation with reveal.js</a></p>
-        </section>
-        <section>
-            <h1>Live demo</h1>
         </section>
     </div>
 </div>
