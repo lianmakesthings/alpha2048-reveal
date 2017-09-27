@@ -237,12 +237,16 @@
         </section>
         <section>
             <h1><a href="http://cs.stanford.edu/people/karpathy/reinforcejs/">REINFORCEjs</a></h1>
-            <section data-transition="slide-out"></section>
+            <section data-transition="slide-out">
+                <aside class="notes">
+                    andrej kaparthy director of AI at tesla
+                </aside>
+            </section>
             <section data-transition="slide-in">
                 <pre><code class="javascript" data-trim>
                     const state = [0, 2, 2, ..., 0];
                     const action = agent.act(state);
-                    const reward = calculateReward();
+                    const reward = calculateReward(action);
                     agent.learn(reward);
                 </code></pre>
             </section>
@@ -255,35 +259,41 @@
             <section data-transition="slide-out"></section>
             <section data-transition="slide-in slide-out">
                 <h2>Reward = Score</h2>
-            </section>
-            <section data-transition="slide-in slide-out" style="margin-top: 75px">
-                <img src="assets/grafana/oneLayerScore.png">
-            </section>
-            <section data-transition="slide-in slide-out" style="margin-top: 75px">
-                <img src="assets/grafana/oneLayerScore-avgScore.png">
-            </section>
-        </section>
-        <section>
-            <h1>Second iteration</h1>
-            <section data-transition="slide-out">
                 <aside class="notes">
-                    Problem with flat input, added second layer
+                    Problem with flat input in a run before, added second layer
                 </aside>
             </section>
             <section data-transition="slide-in slide-out" style="margin-top: 75px">
                 <img src="assets/grafana/twoLayerScore_Games.png">
             </section>
             <section data-transition="slide-in slide-out" style="margin-top: 75px">
-                <img src="assets/grafana/twoLayerScore_GamesAvg.png">
+                <img src="assets/grafana/twoLayerScoreGamesAvg.png">
             </section>
         </section>
         <section>
-            <h1>Third iteration</h1>
-            <section data-transition="slide-out"></section>
+            <h1>Second iteration</h1>
+            <section data-transition="slide-out">
+                <aside class="notes">
+                    Decay Score
+                </aside>
+            </section>
             <section data-transition="slide-in slide-out">
                 <h2>decay $\epsilon$ over time</h2>
                 <h4>(exploration)</h4>
             </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <img src="assets/grafana/twoLayerDecayScore_Games.png">
+            </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <img src="assets/grafana/twoLayersDecayScore_GamesAvg.png">
+            </section>
+        </section>
+        <section>
+            <h1>Third iteration</h1>
+            <aside class="notes">
+                Delayed reward
+            </aside>
+            <section data-transition="slide-out"></section>
             <section data-transition="slide-in slide-out" style="margin-top: 75px">
                 <img src="assets/grafana/twoLayerDecayScoreGames.png">
             </section>
@@ -316,7 +326,7 @@
                 <h2>flat input</h2>
             </section>
             <section data-transition="slide-in slide-out">
-                <h2>one hidden layer</h2>
+                <h2>hardcoded layers</h2>
             </section>
         </section>
         <section>
