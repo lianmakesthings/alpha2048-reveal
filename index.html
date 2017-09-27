@@ -257,53 +257,24 @@
                 <h2>Reward = Score</h2>
             </section>
             <section data-transition="slide-in slide-out" style="margin-top: 75px">
-                <iframe data-src="http://localhost:3000/dashboard-solo/db/score-game-end?from=1489887321882&to=1489923614093&panelId=1"
-                        width="1200" height="500"></iframe>
+                <img src="assets/grafana/oneLayerScore.png">
             </section>
-            <section>
-                <h2>find other reinforcement value</h2>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <img src="assets/grafana/oneLayerScore-avgScore.png">
             </section>
         </section>
         <section>
             <h1>Second iteration</h1>
-            <section data-transition="slide-out"></section>
-            <section data-transition="slide-in slide-out">
-                <h2>$ tileRating = \frac{\sum tileValues}{tileCount}$</h2>
-            </section>
-            <section data-transition="slide-in slide-out">
-                <div style="margin-top: 125px">
-                    <div style="float: left;  margin-top: 100px">
-                        <img src="assets/before.png" height="200">
-                        <p style="font-size: 60%; margin-top: -20px">Score: 0 | Rating: 2.5</p>
-                    </div>
-                    <div style="float: left; margin-left: 100px">
-                        <div style="margin-left: 25px">
-                            <div class="fragment" style="float: left; margin-top: 75px; font-size: 150%">
-                                Left <i class="fa fa-long-arrow-right"></i>
-                            </div>
-                            <div style="float: left; margin-left: 100px">
-                                <img class="fragment" src="assets/after-Merge.png" height="200">
-                                <p class="fragment" style="font-size: 60%; margin-top: -20px">Score: 4 | Rating: 3.5</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="fragment" style="float: left; margin-top: 75px; font-size: 150%">
-                                Down <i class="fa fa-long-arrow-right"></i>
-                            </div>
-                            <div style="float: left; margin-left: 75px">
-                                <img class="fragment" src="assets/after-noMerge.png" height="200">
-                                <p class="fragment" style="font-size: 60%; margin-top: -20px">Score: 0 | Rating: 2.8</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section data-transition="slide-in slide-out">
-                <h4>$ reward = (\frac{score}{averageScore}) \times (\frac{rating}{averageRating})$</h4>
+            <section data-transition="slide-out">
+                <aside class="notes">
+                    Problem with flat input, added second layer
+                </aside>
             </section>
             <section data-transition="slide-in slide-out" style="margin-top: 75px">
-                <iframe data-src="http://localhost:3000/dashboard-solo/db/rating-score-game-end?panelId=2&from=1490043996929&to=1490081616986"
-                        width="1200" height="500"></iframe>
+                <img src="assets/grafana/twoLayerScore_Games.png">
+            </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <img src="assets/grafana/twoLayerScore_GamesAvg.png">
             </section>
         </section>
         <section>
@@ -314,8 +285,10 @@
                 <h4>(exploration)</h4>
             </section>
             <section data-transition="slide-in slide-out" style="margin-top: 75px">
-                <iframe data-src="http://localhost:3000/dashboard-solo/db/decay-epsilon-score-rating?from=1490135381170&to=1490169406419&panelId=2"
-                    width="1200" height="500"></iframe>
+                <img src="assets/grafana/twoLayerDecayScoreGames.png">
+            </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <img src="assets/grafana/twoLayerDecayScoreGames_Avg.png">
             </section>
         </section>
         <section>
