@@ -29,14 +29,7 @@
         <section>
             <h1>Alpha2048 </h1><h3>Reinforcement learning in the browser</h3>
             <aside class="notes">
-                I'm deeply humbled and somewhat intimidated by being here amidst all you machine learning experts.
-                I am, by which I mean I work as a software developer.
-                Machine Learning is somewhat of a hobby and this is the story of how I tried to build an intelligent
-                system,
-                which could learn a game the old trial and error way.
-                When I researched different learning algorithms, sometimes I wasn't 100% clear on the theory or math
-                behind it.
-                So if I say something you object to, please let me now.
+                case study
             </aside>
         </section>
         <section>
@@ -57,7 +50,7 @@
                 </h2>
             </section>
             <section data-transition="slide-in slide-out">
-                <h2>Software Developer @ Datenfreunde</h2>
+                <h2>Software Engineer / Data Scientist @ Datenfreunde</h2>
             </section>
             <section data-transition="slide-in">
                 <h2>Machine Learning enthusiast</h2>
@@ -232,12 +225,16 @@
         </section>
         <section>
             <h1><a href="http://cs.stanford.edu/people/karpathy/reinforcejs/">REINFORCEjs</a></h1>
-            <section data-transition="slide-out"></section>
+            <section data-transition="slide-out">
+                <aside class="notes">
+                    andrej kaparthy director of AI at tesla
+                </aside>
+            </section>
             <section data-transition="slide-in">
                 <pre><code class="javascript" data-trim>
                     const state = [0, 2, 2, ..., 0];
                     const action = agent.act(state);
-                    const reward = calculateReward();
+                    const reward = calculateReward(action);
                     agent.learn(reward);
                 </code></pre>
             </section>
@@ -250,33 +247,63 @@
             <section data-transition="slide-out"></section>
             <section data-transition="slide-in slide-out">
                 <h2>Reward = Score</h2>
+                <aside class="notes">
+                    Problem with flat input in a run before, added second layer
+                </aside>
             </section>
             <section data-transition="slide-in slide-out" style="margin-top: 75px">
-                <iframe data-src="http://localhost:3000/dashboard-solo/db/score-game-end?from=1489887321882&to=1489923614093&panelId=1"
-                        width="1200" height="500"></iframe>
+                <img src="assets/grafana/twoLayerScore_Games.png">
             </section>
+<<<<<<< HEAD
+=======
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <img src="assets/grafana/twoLayerScoreGamesAvg.png">
+            </section>
+>>>>>>> codetalks_2017
         </section>
         <section>
             <h1>Second iteration</h1>
-            <section data-transition="slide-out"></section>
+            <section data-transition="slide-out">
+                <aside class="notes">
+                    Decay Score
+                </aside>
+            </section>
             <section data-transition="slide-in slide-out">
                 <h2>decay $\epsilon$ over time</h2>
                 <h4>(exploration)</h4>
             </section>
             <section data-transition="slide-in slide-out" style="margin-top: 75px">
+<<<<<<< HEAD
                 <iframe data-src="http://localhost:3000/dashboard-solo/db/decay-epsilon-score-rating?from=1490135381170&to=1490169406419&panelId=2"
                     width="1200" height="500"></iframe>
+=======
+                <img src="assets/grafana/twoLayerDecayScore_Games.png">
+            </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <img src="assets/grafana/twoLayersDecayScore_GamesAvg.png">
+>>>>>>> codetalks_2017
             </section>
         </section>
         <section>
             <h1>Third iteration</h1>
+            <aside class="notes">
+                Delayed reward
+            </aside>
             <section data-transition="slide-out"></section>
+<<<<<<< HEAD
             <section data-transition="slide-in slide-out">
                 <h2>add hidden layer</h2>
             </section>
             <section data-transition="slide-in slide-out" style="margin-top: 75px">
                 <iframe data-src="http://localhost:3000/dashboard-solo/db/two-layers-rating-score-normalized?from=1493026758609&to=1493060856532&panelId=2"
                         width="1200" height="500"></iframe>
+=======
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <img src="assets/grafana/twoLayerDecayScoreGames.png">
+            </section>
+            <section data-transition="slide-in slide-out" style="margin-top: 75px">
+                <img src="assets/grafana/twoLayerDecayScoreGames_Avg.png">
+>>>>>>> codetalks_2017
             </section>
         </section>
         <section>
@@ -301,7 +328,7 @@
                 <h2>boardsize</h2>
             </section>
             <section data-transition="slide-in slide-out">
-                <h2>flat input</h2>
+                <h2>hardcoded layers</h2>
             </section>
         </section>
         <section>
